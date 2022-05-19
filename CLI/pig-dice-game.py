@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 
 
 scoreboard = [0, 0]
@@ -24,3 +25,18 @@ scoreboard[0]+=player_turn_score
 print(f'Scoreboard: {scoreboard}')
 
 com_turn_score = 0
+while com_turn_score<=30:
+    print("================")
+    print("Com's Show time!")
+    sleep(1)
+    rolled = randint(1,6)
+    if rolled==1:
+        com_turn_score=0
+        print("Uh-oh.. Com got 1.. I got nothin' on this turn..")
+        break
+    else:
+        com_turn_score+=rolled
+        print(f"I got {rolled}, and I have {com_turn_score}.")
+
+scoreboard[1]+=com_turn_score
+print(f'Scoreboard: {scoreboard}')
